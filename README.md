@@ -1,5 +1,7 @@
 # 미션 - 숫자 야구
 
+[자료 출처](https://github.com/woowacourse-precourse/java-baseball)
+
 ## 🔍 진행 방식
 
 - 미션은 **기능 요구 사항, 프로그래밍 요구 사항, 과제 진행 요구 사항** 세 가지로 구성되어 있다.
