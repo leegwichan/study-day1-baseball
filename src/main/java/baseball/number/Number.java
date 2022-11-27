@@ -22,7 +22,7 @@ public abstract class Number {
         return number;
     }
 
-    public boolean isEqual(ManualNumber number) {
+    public boolean isEqual(Number number) {
         return this.number == number.getNumber();
     }
 }
