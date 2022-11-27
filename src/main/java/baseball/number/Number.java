@@ -14,4 +14,8 @@ public class Number {
             throw new IllegalArgumentException();
         }
     }
+
+    public char getNumber() {
+        return number;
+    }
 }
