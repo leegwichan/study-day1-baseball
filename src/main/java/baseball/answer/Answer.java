@@ -1,5 +1,6 @@
 package baseball.answer;
 
+import baseball.dto.ResultDto;
 import baseball.number.AutoNumber;
 import baseball.number.Number;
 import java.util.List;
@@ -33,5 +34,7 @@ public class Answer {
                 .count() != 0;
     }
 
-    
+    public ResultDto compareNumbers(List<Number> question) {
+        return AnswerComparator.compareNumbers(question, answer);
+    }
 }
