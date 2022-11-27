@@ -1,7 +1,7 @@
 # 구현할 기능 목록
 
 ### InputView
-- [ ] 야구 게임 숫자를 입력 받음
+- [x] 야구 게임 숫자를 입력 받음
   - 숫자가 아닐 경우, `IllegalArgumentException` 에러를 발생시킴
 - [ ] 재시작을 여부를 입력 받음
   - 입력 형식 (1 또는 2)이 일치하지 않을 경우 `IllegalArgumentException` 에러를 발생시킴
