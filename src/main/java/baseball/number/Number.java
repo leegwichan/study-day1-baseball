@@ -2,7 +2,7 @@ package baseball.number;
 
 public class Number {
 
-    private static final char MIN_CHAR = '9';
+    private static final char MIN_CHAR = '1';
     private static final char MAX_CHAR = '9';
 
     private final char number;
