@@ -6,6 +6,10 @@ public class OutputView extends OutputViewText{
         print(START_GAME);
     }
 
+    public void printGameClear() {
+        print(GAME_CLEAR);
+    }
+
     private void print(String string) {
         System.out.println(string);
     }
