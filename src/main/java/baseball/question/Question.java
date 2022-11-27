@@ -4,7 +4,6 @@ import baseball.number.ManualNumber;
 import baseball.number.Number;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Question {
 
@@ -12,7 +11,7 @@ public class Question {
 
     private List<Number> question;
 
-    Question(int number) {
+    public Question(int number) {
         validateNumber(number);
         initializeNumber(number);
     }
@@ -38,5 +37,9 @@ public class Question {
             int digitNumber = number / (int) Math.pow(10, digit) % 10;
             question.add(new ManualNumber(digitNumber));
         }
+    }
+
+    public List<Number> getNumbers() {
+        return question;
     }
 }

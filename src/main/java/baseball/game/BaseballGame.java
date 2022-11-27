@@ -8,7 +8,7 @@ public class BaseballGame {
 
     private final Answer answer;
 
-    BaseballGame() {
+    public BaseballGame() {
         this.answer = new Answer();
     }
 

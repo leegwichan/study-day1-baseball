@@ -3,13 +3,14 @@ package baseball.answer;
 import baseball.dto.ResultDto;
 import baseball.number.AutoNumber;
 import baseball.number.Number;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Answer {
 
     private final int COUNT_OF_DIGIT = 3;
 
-    private List<Number> answer;
+    private final List<Number> answer = new ArrayList<>();
 
     public Answer() {
         createAnswer();
@@ -18,8 +19,9 @@ public class Answer {
     private void createAnswer() {
         while (answer.size() >= COUNT_OF_DIGIT) {
             Number newNumber = new AutoNumber();
-            if (isAlreadyIn(newNumber)) {
+            if (!isAlreadyIn(newNumber)) {
                 answer.add(newNumber);
+                System.out.println(answer.size());
             }
         }
     }
