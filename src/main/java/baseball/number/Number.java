@@ -1,28 +1,28 @@
 package baseball.number;
 
-public class Number {
+public abstract class Number {
 
-    private static final char MIN_CHAR = '1';
-    private static final char MAX_CHAR = '9';
+    protected static final int MIN_NUMBER = 1;
+    protected static final int MAX_CHAR = 9;
 
-    private final char number;
+    private final int number;
 
-    public Number(char number) {
+    Number(int number) {
         validateNumberInRange(number);
         this.number = number;
     }
 
-    private void validateNumberInRange(char number) {
-        if (number < MIN_CHAR || number > MAX_CHAR) {
+    private void validateNumberInRange(int number) {
+        if (number < MIN_NUMBER || number > MAX_CHAR) {
             throw new IllegalArgumentException();
         }
     }
 
-    public char getNumber() {
+    public int getNumber() {
         return number;
     }
 
-    public boolean isEqual(Number number) {
+    public boolean isEqual(ManualNumber number) {
         return this.number == number.getNumber();
     }
 }

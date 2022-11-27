@@ -10,19 +10,19 @@ public class NumberTest {
 
     @ParameterizedTest(name = "Case : {0}")
     @CsvSource(value = {"4","1","8","9"})
-    void createNumberNormalTest(char number) {
+    void createNumberNormalTest(int number) {
         try {
-            new Number(number);
+            new ManualNumber(number);
         } catch (IllegalArgumentException e) {
             fail();
         }
     }
 
     @ParameterizedTest(name = "Case : {0}")
-    @CsvSource(value = {"0","p","각"})
-    void createNumberAbnormalTest(char number) {
+    @CsvSource(value = {"0","15","99"})
+    void createNumberAbnormalTest(int number) {
         try {
-            new Number(number);
+            new ManualNumber(number);
             fail();
         } catch (IllegalArgumentException e) {
         }
@@ -30,9 +30,9 @@ public class NumberTest {
 
     @ParameterizedTest(name = "isEqualTest Case : {0}, {1}")
     @CsvSource(value = {"3:3:true", "3:6:false"}, delimiter = ':')
-    void isEqualTest(char firstNumber, char secondNumber, boolean expected) {
-        Number object1 = new Number(firstNumber);
-        Number object2 = new Number(secondNumber);
+    void isEqualTest(int firstNumber, int secondNumber, boolean expected) {
+        ManualNumber object1 = new ManualNumber(firstNumber);
+        ManualNumber object2 = new ManualNumber(secondNumber);
 
         assertThat(object1.isEqual(object2)).isEqualTo(expected);
     }
