@@ -22,7 +22,7 @@
 ### Question : 입력한 값을 가지고 있음
 - [x] 생성시에 숫자가 중복되지 않았는지 판단함, 3자리가 맞는지 판단함
     - 그렇지 않으면 `IllegalArgumentException`을 발생시킴
-- [ ] 받은 값을 통해 List<Number>를 만들어 필드로 가지고 있음
+- [x] 받은 값을 통해 List<Number>를 만들어 필드로 가지고 있음
 - [ ] 현재 가지고 있는 List<Number>를 제공하는 기능
 
 ### Number : 숫자 한 자리씩을 담당함
