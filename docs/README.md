@@ -3,8 +3,8 @@
 ### InputView
 - [x] 야구 게임 숫자를 입력 받음
   - 숫자가 아닐 경우, `IllegalArgumentException` 에러를 발생시킴
-- [ ] 재시작을 여부를 입력 받음
-  - 입력 형식 (1 또는 2)이 일치하지 않을 경우 `IllegalArgumentException` 에러를 발생시킴
+- [x] 재시작을 여부를 입력 받음
+    - 입력 형식 (1 또는 2)이 일치하지 않을 경우 `IllegalArgumentException` 에러를 발생시킴
 
 ### OutputView
 - [ ] 입력한 수의 결과를 볼, 스트라이크로 표시하는 기능
