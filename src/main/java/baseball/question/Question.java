@@ -1,13 +1,12 @@
 package baseball.question;
 
+import baseball.constant.Constant;
 import baseball.number.ManualNumber;
 import baseball.number.Number;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Question {
-
-    private final int COUNT_OF_DIGIT = 3;
 
     private List<Number> question;
 
@@ -23,12 +22,12 @@ public class Question {
     }
 
     private boolean isCountOfDigitCorrect(int number) {
-        return String.valueOf(number).chars().count() == COUNT_OF_DIGIT;
+        return String.valueOf(number).chars().count() == Constant.COUNT_OF_DIGIT;
     }
 
     private boolean isNotOverlapped(int number) {
         return String.valueOf(number).chars()
-                        .distinct().count() == COUNT_OF_DIGIT;
+                        .distinct().count() == Constant.COUNT_OF_DIGIT;
     }
 
     private void initializeNumber(int number) {

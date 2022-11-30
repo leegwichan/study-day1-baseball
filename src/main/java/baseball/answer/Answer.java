@@ -1,5 +1,6 @@
 package baseball.answer;
 
+import baseball.constant.Constant;
 import baseball.dto.ResultDto;
 import baseball.number.AutoNumber;
 import baseball.number.Number;
@@ -8,8 +9,6 @@ import java.util.List;
 
 public class Answer {
 
-    private final int COUNT_OF_DIGIT = 3;
-
     private final List<Number> answer = new ArrayList<>();
 
     public Answer() {
@@ -17,7 +16,7 @@ public class Answer {
     }
 
     private void createAnswer() {
-        while (answer.size() < COUNT_OF_DIGIT) {
+        while (answer.size() < Constant.COUNT_OF_DIGIT) {
             Number newNumber = new AutoNumber();
             if (!isAlreadyInAnswer(newNumber)) {
                 answer.add(newNumber);
