@@ -13,18 +13,16 @@ public enum Retry {
         this.format = format;
     }
 
-    public static boolean isFormatCorrect(String format) {
-        return Arrays.stream(Retry.values())
-                .map(retry -> retry.format.equals(format))
-                .reduce(false, Boolean::logicalOr);
-    }
-
     public static Retry getRetry(String format) {
         for (Retry retry : Retry.values()) {
             if (retry.format.equals(format)) {
                 return retry;
             }
         }
-        return null;
+        throw new IllegalArgumentException("[ERROR] ");
+    }
+
+    public String getFormat() {
+        return format;
     }
 }

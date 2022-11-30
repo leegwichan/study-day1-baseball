@@ -5,12 +5,12 @@ import camp.nextstep.edu.missionutils.Console;
 
 public class InputView {
 
-    public Retry readRetry() {
-        String input = Console.readLine();
+    private static final String NUMBER_REQUEST = "숫자를 입력해주세요 : ";
+    private static final String RETRY_REQUEST_FORMAT = "게임을 새로 시작하려면 %s, 종료하려면 %s를 입력하세요.\n";
 
-        if (!Retry.isFormatCorrect(input)) {
-            throw new IllegalArgumentException();
-        }
+    public Retry readRetry() {
+        print(String.format(RETRY_REQUEST_FORMAT, Retry.RESTART.getFormat(), Retry.QUIT.getFormat()));
+        String input = Console.readLine();
         return Retry.getRetry(input);
     }
 
@@ -23,7 +23,12 @@ public class InputView {
     }
 
     private int tryReadNumbers() {
+        print(NUMBER_REQUEST);
         String input = Console.readLine();
         return Integer.parseInt(input);
+    }
+
+    private void print(String string) {
+        System.out.print(string);
     }
 }
