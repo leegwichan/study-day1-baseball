@@ -1,6 +1,7 @@
 package baseball.view.input;
 
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
 import camp.nextstep.edu.missionutils.Console;
@@ -14,11 +15,7 @@ public class InputViewTest extends MockConsole{
     void readNumbersNormalTest(String data) {
         when(Console.readLine()).thenReturn(data);
 
-        try {
-            new InputView().readNumbers();
-        } catch (IllegalArgumentException e) {
-            fail();
-        }
+        assertDoesNotThrow(() -> new InputView().readNumbers());
     }
 
     @ParameterizedTest(name = "readNumbersTest Case : {0}")
@@ -26,11 +23,8 @@ public class InputViewTest extends MockConsole{
     void readNumbersAbnormalTest(String data) {
         when(Console.readLine()).thenReturn(data);
 
-        try {
-            new InputView().readNumbers();
-            fail();
-        } catch (IllegalArgumentException e) {
-        }
+        assertThrows(IllegalArgumentException.class,
+                () -> new InputView().readNumbers());
     }
 
     @ParameterizedTest(name = "readRetryTest Case : {0}")
@@ -38,11 +32,7 @@ public class InputViewTest extends MockConsole{
     void readRetryNormalTest(String data) {
         when(Console.readLine()).thenReturn(data);
 
-        try {
-            new InputView().readRetry();
-        } catch (IllegalArgumentException e) {
-            fail();
-        }
+        assertDoesNotThrow(() -> new InputView().readRetry());
     }
 
     @ParameterizedTest(name = "readRetryTest Case : {0}")
@@ -50,10 +40,7 @@ public class InputViewTest extends MockConsole{
     void readRetryAbnormalTest(String data) {
         when(Console.readLine()).thenReturn(data);
 
-        try {
-            new InputView().readRetry();
-            fail();
-        } catch (IllegalArgumentException e) {
-        }
+        assertThrows(IllegalArgumentException.class,
+                () -> new InputView().readRetry());
     }
 }
