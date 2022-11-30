@@ -1,14 +1,12 @@
 package baseball;
 
+import baseball.constant.Retry;
 import baseball.dto.ResultDto;
 import baseball.game.BaseballGame;
 import baseball.view.input.InputView;
 import baseball.view.output.OutputView;
 
 public class BaseballApplication {
-
-    private static final String RESTART = "1";
-    private static final String QUIT = "2";
 
     private final InputView inputView;
     private final OutputView outputView;
@@ -24,7 +22,7 @@ public class BaseballApplication {
 
         do {
             startGame();
-        } while (inputView.readRetry().equals(RESTART));
+        } while (inputView.readRetry() == Retry.RESTART);
     }
 
     private void startGame() {
