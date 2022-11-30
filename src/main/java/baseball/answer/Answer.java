@@ -17,23 +17,21 @@ public class Answer {
     }
 
     private void createAnswer() {
-        while (answer.size() >= COUNT_OF_DIGIT) {
+        while (answer.size() < COUNT_OF_DIGIT) {
             Number newNumber = new AutoNumber();
-            if (!isAlreadyIn(newNumber)) {
+            if (!isAlreadyInAnswer(newNumber)) {
                 answer.add(newNumber);
-                System.out.println(answer.size());
             }
         }
     }
 
-    private boolean isAlreadyIn(Number number) {
-        if (answer.isEmpty()) {
-            return false;
+    private boolean isAlreadyInAnswer(Number number) {
+        for (Number answerNumber : answer) {
+            if (number.isEqual(answerNumber)) {
+                return true;
+            }
         }
-
-        return answer.stream()
-                .filter(answerNumber -> answerNumber.isEqual(number))
-                .count() != 0;
+        return false;
     }
 
     public ResultDto compareNumbers(List<Number> question) {
