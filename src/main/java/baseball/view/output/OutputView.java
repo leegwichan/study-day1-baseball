@@ -13,27 +13,31 @@ public class OutputView extends OutputViewText{
     }
 
     public void printResult(ResultDto result) {
+        StringBuilder stringBuilder = new StringBuilder();
+
+        addBall(stringBuilder, result);
+        addStrike(stringBuilder, result);
+        addIfNothing(stringBuilder);
+
+        print(stringBuilder.toString().trim());
+    }
+
+    private void addBall(StringBuilder stringBuilder, ResultDto result) {
+        if (result.getBall() > 0) {
+            stringBuilder.append(result.getBall() + BALL);
+        }
+    }
+
+    private void addStrike(StringBuilder stringBuilder, ResultDto result) {
         if (result.getStrike() > 0) {
-            printIncludeStrike(result);
-            return;
+            stringBuilder.append(result.getStrike() + STRIKE);
         }
-        printExcludeStrike(result);
     }
 
-    private void printIncludeStrike(ResultDto result) {
-        if (result.getBall() > 0) {
-            print(String.format(BALL_STRIKE_FORMAT, result.getBall(), result.getStrike()));
-            return;
+    private void addIfNothing(StringBuilder stringBuilder) {
+        if (stringBuilder.length() == 0) {
+            stringBuilder.append(NOTHING);
         }
-        print(result.getStrike() + STRIKE);
-    }
-
-    private void printExcludeStrike(ResultDto result) {
-        if (result.getBall() > 0) {
-            print(result.getBall() + BALL);
-            return;
-        }
-        print(NOTHING);
     }
 
     private void print(String string) {

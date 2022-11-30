@@ -7,6 +7,5 @@ public abstract class OutputViewText {
 
     protected static final String NOTHING = "낫싱";
     protected static final String STRIKE = "스트라이크";
-    protected static final String BALL = "볼";
-    protected static final String BALL_STRIKE_FORMAT = "%s볼 %s스트라이크";
+    protected static final String BALL = "볼 ";
 }
