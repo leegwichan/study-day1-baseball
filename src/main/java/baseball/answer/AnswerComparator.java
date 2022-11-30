@@ -7,14 +7,19 @@ import java.util.stream.IntStream;
 
 public class AnswerComparator {
 
-    private static final int COUNT_OF_DIGIT = 3;
-
     public static ResultDto compareNumbers(List<Number> question, List<Number> answer) {
+        validateSizeIsEqual(question, answer);
         int strike = countStrike(question, answer);
         int ball = countBall(question, answer);
-        boolean isDone = strike == COUNT_OF_DIGIT;
+        boolean isDone = strike == answer.size();
 
         return new ResultDto(strike, ball, isDone);
+    }
+
+    private static void validateSizeIsEqual(List<Number> question, List<Number> answer) {
+        if (question.size() != answer.size()) {
+            throw new IllegalArgumentException();
+        }
     }
 
     private static int countStrike(List<Number> question, List<Number> answer) {
