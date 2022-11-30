@@ -33,9 +33,10 @@ public class Question {
 
     private void initializeNumber(int number) {
         question = new ArrayList<>();
-        for (int digit = 0; digit < COUNT_OF_DIGIT; digit++) {
-            int digitNumber = number / (int) Math.pow(10, digit) % 10;
-            question.add(new ManualNumber(digitNumber));
+        while (number > 0) {
+            int lastNumber = number % 10;
+            question.add(0, new ManualNumber(lastNumber));
+            number = number / 10;
         }
     }
 
