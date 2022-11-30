@@ -21,27 +21,21 @@ public class BaseballApplication {
 
     public void run() {
         outputView.printStartGame();
-        while (true) {
-            startGame();
 
-            if (inputView.readRetry().equals(QUIT)) {
-                break;
-            }
-        }
+        do {
+            startGame();
+        } while (inputView.readRetry().equals(RESTART));
     }
 
     private void startGame() {
         baseballGame = new BaseballGame();
 
-        while (true) {
+        ResultDto result;
+        do {
             int number = inputView.readNumbers();
-            ResultDto result = baseballGame.compare(number);
-
+            result = baseballGame.compare(number);
             outputView.printResult(result);
-            if (result.isDone()) {
-                outputView.printGameClear();
-                break;
-            }
-        }
+        } while (!result.isDone());
+        outputView.printGameClear();
     }
 }
